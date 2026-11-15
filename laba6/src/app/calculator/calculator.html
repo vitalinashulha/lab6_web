@@ -1,0 +1,40 @@
+<section class="flex-center">
+  <div class="content-box">
+    <h2 class="gradient-text">Завдання 2</h2>
+    <p>
+      Базовий клас: Співробітник (ім'я, p - мінімальна зарплата). Метод: Дохід = k * p.<br />
+      Нащадок: Інженер (n - кількість проєктів). Дохід збільшується в n / 10 разів.
+    </p>
+  </div>
+</section>
+
+<section class="flex-center">
+  <form class="flex-row flex-wrap">
+    <fieldset class="flex-col">
+      <legend>Співробітник</legend>
+      <input type="text" value="Іван" id="emp_name" placeholder="Ім'я" #emp_name />
+      <input type="number" value="8000" id="p1" min="0" placeholder="Мін. зарплата (p)" #p1 />
+      <input type="number" value="1.5" id="k1" step="0.1" min="0" placeholder="Коефіцієнт (k)" #k1 />
+    </fieldset>
+
+    <fieldset class="flex-col">
+      <legend>Інженер</legend>
+      <input type="text" value="Петро" id="eng_name" placeholder="Ім'я" #eng_name />
+      <input type="number" value="10000" id="p2" min="0" placeholder="Мін. зарплата (p)" #p2 />
+      <input type="number" value="2.0" id="k2" step="0.1" min="0" placeholder="Коефіцієнт (k)" #k2 />
+      <input type="number" value="15" id="n" min="0" placeholder="К-сть проєктів (n)" #n />
+    </fieldset>
+  </form>
+  
+  <button class="btn" (click)="calcIncome(emp_name.value, p1.value, k1.value, eng_name.value, p2.value, k2.value, n.value)">
+    <span>Розрахувати дохід</span>
+  </button>
+</section>
+
+<section class="flex-center result-section">
+  <h2 class="gradient-text">Результати обрахунків</h2>
+  <div class="flex-col">
+    <h4 class="result-text">{{ employee_show }}</h4>
+    <h4 class="result-text">{{ engineer_show }}</h4>
+  </div>
+</section>
